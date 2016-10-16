@@ -2,10 +2,10 @@ const Dispatcher = require('flux').Dispatcher;
 const assign = require('object-assign');
 
 const AppDispatcher = assign(new Dispatcher(), {
-  handlerViewAction : function(action) {
+  handleViewAction: function(action) {
     const payload = {
       source: 'VIEW_ACTION',
-      action: action
+      action,
     }
     this.dispatch(payload);
   }

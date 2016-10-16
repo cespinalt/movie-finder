@@ -3,6 +3,7 @@ const Component = require('react').Component;
 const AppActions = require('../actions/AppActions');
 const AppStores = require('../stores/AppStores');
 const SearchForm = require('./SearchForm.jsx');
+const MovieResults = require('./MovieResults.jsx');
 
 function getAppState() {
   return {
@@ -13,7 +14,7 @@ function getAppState() {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = getAppState();
   }
 
   componentDidMount() {
@@ -29,14 +30,20 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.movies);
+    let movies;
+    if (this.state.movies.length === 0) {
+      movies = '';
+    } else {
+      movies = <MovieResults movies={this.state.movies} />;
+    }
     return(
       <div className="container">
         <div className="row">
-          <div className="col-xs-8 col-xs-offset-2">
+          <div className="col-md-8 col-md-offset-2">
             <div className="well">
               <SearchForm />
             </div>
+            {movies}
           </div>
         </div>
       </div>

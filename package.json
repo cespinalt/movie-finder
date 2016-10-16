@@ -9,6 +9,7 @@
   "author": "Carlos Espinal",
   "license": "ISC",
   "devDependencies": {
+    "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "flux": "^3.0.0",
     "gulp": "^3.9.1",

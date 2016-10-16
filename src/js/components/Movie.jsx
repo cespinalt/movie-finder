@@ -15,7 +15,7 @@ class Movie extends Component {
           <h4>{movie.Title}</h4>
 
           <ul className="list-group">
-            <li className="list-group-item">Year Release{movie.Year}</li>
+            <li className="list-group-item">Year Release: {movie.Year}</li>
             <li className="list-group-item">IMDB ID: {movie.imdbID}</li>
           </ul>
 
